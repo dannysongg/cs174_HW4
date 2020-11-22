@@ -20,7 +20,7 @@ class HomePage {
                 $perm = explode(" ", fread($permFile,filesize("./src/resources/active_image.txt")));
                 foreach ($perm as $tile){
                     ?>
-                    <div class="<?="tile".$tile?>" onclick="highlightTile(this)"></div>
+                    <div id="<?="tile".$tile?>" class = "tile" onclick="highlightTile(this)"></div>
                     <?php
                 }
             ?>

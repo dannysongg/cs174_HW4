@@ -3,47 +3,47 @@
     grid-template-columns: 120px 120px 120px;
     grid-template-rows: 120px 120px 120px;
 }
-.tile0 {
+#tile0 {
     background-image: url('resources/active_image.jpg');
     background-repeat: no-repeat;
     background-position: 0px 0px;
 }
-.tile1 { 
+#tile1 { 
     background-image: url('resources/active_image.jpg');
     background-repeat: no-repeat;
     background-position: -120px 0px;
 }
-.tile2 {
+#tile2 {
     background-image: url('resources/active_image.jpg');
     background-repeat: no-repeat;
     background-position: -240px 0px;
 }
-.tile3 {
+#tile3 {
     background-image: url('resources/active_image.jpg');
     background-repeat: no-repeat;
     background-position: 0px -120px;
 }
-.tile4 {
+#tile4 {
     background-image: url('resources/active_image.jpg');
     background-repeat: no-repeat;
     background-position: -120px -120px;
 }
-.tile5 {
+#tile5 {
     background-image: url('resources/active_image.jpg');
     background-repeat: no-repeat;
     background-position: -240px -120px;
 }
-.tile6 {
+#tile6 {
     background-image: url('resources/active_image.jpg');
     background-repeat: no-repeat;
     background-position: 0px -240px;
 }
-.tile7 {
+#tile7 {
     background-image: url('resources/active_image.jpg');
     background-repeat: no-repeat;
     background-position: -120px -240px;
 }
-.tile8 {
+#tile8 {
     background-image: url('resources/active_image.jpg');
     background-repeat: no-repeat;
     background-position: -240px -240px;
