@@ -15,20 +15,20 @@ class HomePage {
         </form>
         </div>
         <div class="jigsaw-board">
-            <div class="one">0,0</div>
-            <div class="two">0,1</div>
-            <div class="three">0,2</div>
-            <div class="four">1,0</div>
-            <div class="five">1,1</div>
-            <div class="six">1,2</div>
-            <div class="seven">2,0</div>
-            <div class="eight">2,1</div>
-            <div class="nine">2,2</div>
+            <?php
+                $permFile = fopen("./src/resources/active_image.txt", "r");
+                $perm = explode(" ", fread($permFile,filesize("./src/resources/active_image.txt")));
+                foreach ($perm as $tile){
+                    ?>
+                    <div class="<?="tile".$tile?>" onclick="highlightTile(this)"></div>
+                    <?php
+                }
+            ?>
         </div>
         <?php 
     }
 }
 ?>
-
+<script src="./src/jigsaw.js"></script>
 <?php
     
