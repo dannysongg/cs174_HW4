@@ -7,7 +7,10 @@ class htmlLayout{
     {
         ?><!DOCTYPE html>
         <html>
-        <head><title>Community Jigsaw</title></head>
+        <head>
+            <title>Community Jigsaw</title>
+            <link rel="stylesheet" href="./src/style.css">
+        </head>
         <body>
         <?php
         $htmlPage;

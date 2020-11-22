@@ -26,6 +26,7 @@ class ImgAdapter {
             if($uploadOk){
                 $this->imgFileModel->uploadImg($target_file);
                 $this->imgFileModel->scaleAndCropImg($target_file);
+                $this->imgFileModel->createPermutationFile();
                 echo "Image successfully uploaded!";
             }
         }
