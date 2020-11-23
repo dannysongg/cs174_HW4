@@ -1,0 +1,22 @@
+{
+    "name": "danny/cs174hw4",
+    "description": "Community jigsaw puzzle",
+    "authors": [
+        {
+            "name": "Danny Song",
+            "email": "danny.song@sjsu.edu"
+        }
+    ],
+    "require": {
+        "monolog/monolog": "^2.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "cs174\\hw4\\adapters\\": ["src/adapters/"],
+            "cs174\\hw4\\models\\": ["src/models/"],
+            "cs174\\hw4\\views\\": ["src/views/"]
+        }
+    }
+}
+
+

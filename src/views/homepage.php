@@ -29,6 +29,5 @@ class HomePage {
     }
 }
 ?>
-<script src="./src/jigsaw.js"></script>
 <?php
     

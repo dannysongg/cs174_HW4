@@ -28,15 +28,26 @@ function swapTiles(){
 }
 
 function checkIfSolved(){
-    solved = ["tile0", "tile1", "tile2", "tile3", "tile4", "tile5", "tile6", "tile7", "tile8"];
+    solved = ["0", "1", "2", "3", "4", "5", "6", "7", "8"];
     current = [];
     tiles = document.getElementsByClassName("tile");
     for (var i = 0; i<tiles.length; i++){
-        current.push(tiles[i].id);
+        current.push(tiles[i].id.replace(/tile/, ""));
     }
-    console.log(solved);
-    console.log(current);
     if(current.every((val, index) => val === solved[index])){
-        setTimeout(function() { alert("Jigsaw Solved! Congrats!"); }, 250);
+        setTimeout(function(){
+            if(!alert("Jigsaw Solved! Congrats!")){
+                window.location.reload();
+            }
+        }, 250)
     }
+    updatePermFile(current);
 }
+
+function updatePermFile(current){
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.open("POST", "./src/adapters/ajaxAdapter.php");
+    xmlhttp.setRequestHeader("Content-Type", "application/json");
+    xmlhttp.send(JSON.stringify({"currentPerm" : current}));
+}
+
