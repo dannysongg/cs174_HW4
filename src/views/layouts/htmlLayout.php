@@ -17,6 +17,6 @@ class htmlLayout{
         ?>
         </body>
         
-    </html><?php
+        </html><?php
     }
 }

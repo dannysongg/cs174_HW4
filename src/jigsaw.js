@@ -46,9 +46,11 @@ function checkIfSolved(){
 
 function updatePermFile(current){
     var xmlhttp = new XMLHttpRequest();
-    xmlhttp.open("POST", "./src/adapters/ajaxAdapter.php");
-    xmlhttp.setRequestHeader("Content-Type", "application/json");
-    xmlhttp.send(JSON.stringify({"currentPerm" : current}));
+    xmlhttp.open("POST", "./src/models/ajaxModel.php");
+    // xmlhttp.setRequestHeader("Content-Type", "application/json");
+    // xmlhttp.send(JSON.stringify({"currentPerm" : current}));
+    xmlhttp.send(JSON.stringify(current))
+    // window.location.href = "index.php";
 }
 
 function validateFile(file) {

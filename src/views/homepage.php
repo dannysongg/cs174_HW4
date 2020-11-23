@@ -4,6 +4,7 @@ namespace cs174\hw4\views;
 
 class HomePage {
     function renderHome() {
+        header('Clear-Site-Data: "cache"');
         ?>
         <h1>Community Jigsaw</h1>
         <div>
@@ -11,7 +12,7 @@ class HomePage {
         <form action="index.php" method="post" enctype="multipart/form-data">
             <label for="imgPath">New Image: </label>
             <input type="file" id='imgPath' name="imgPath" accept="image" onchange="validateFile(this)">
-            <input type="submit" name="submit" value="Upload">
+            <input type="submit" name="a" value="upload">
         </form>
         </div>
         <div class="jigsaw-board">
