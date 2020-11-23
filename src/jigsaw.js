@@ -51,3 +51,17 @@ function updatePermFile(current){
     xmlhttp.send(JSON.stringify({"currentPerm" : current}));
 }
 
+function validateFile(file) {
+    var FileSize = file.files[0].size / 1024 / 1024; // in MB
+    if (FileSize > 2) {
+        alert('File size exceeds 2 MB');
+    }
+
+    var fileType = file.files[0].type;
+    if (fileType != "image/png" && fileType != "image/jpeg" && fileType != "image/gif"){
+        alert("File must be PNG, JPG, or GIF");
+    }
+}
+
+
+

@@ -10,7 +10,7 @@ class HomePage {
         <ul>
         <form action="index.php" method="post" enctype="multipart/form-data">
             <label for="imgPath">New Image: </label>
-            <input type="file" id='imgPath' name="imgPath" accept="image" />
+            <input type="file" id='imgPath' name="imgPath" accept="image" onchange="validateFile(this)">
             <input type="submit" name="submit" value="Upload">
         </form>
         </div>
