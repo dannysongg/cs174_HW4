@@ -1,0 +1,85 @@
+1. Getting image uploaded
+	use type=file input
+	file contained in super global $_FILES
+	verify size and file type before uploading
+	Commit #1 (b26a70d)
+
+2. Image formatting
+	How to avoid distortion?
+	scale smaller dimension of image to 360px while keeping aspect ratio
+	crop from center to 360pxx360px
+	Commit #2 (9e3bf59)
+
+3. Generate active_image.txt
+	follow instructions in HW4 desc.
+	use implode to convert array to string before putting in file
+	commit #3 (41eb17a)
+
+4. Split background into tiles
+	use display:grid is CSS
+	3x3 120x120px
+	each tiles needs unique ID (ie 'tile0', 'tile1' these correspond to the numbers in active_image.txt
+	all tiles have common class
+	commit #3 (41eb17a)
+
+5. Display tiles appropriately
+	use css background-repeat
+	assign each tile id to a tile shifted by 120px incr
+	use for loop in php to loop through active_image.txt and draw the tile according to the value read from active_image.txt
+	commit #4 (2fc26cf)
+
+6. Highlight and unhighlight tiles
+	add a onclick to call js function to tiles
+	use javascript
+	edit tile.style.boarder
+	keep track of selectedTiles
+	commit #4 (2fc26cf)	
+
+7. Swap tiles 
+	call when second tile is selected selectedTiles.length == 2
+	swap the css ID's of the tiles being swapped
+	commit #5 (02a6278)
+	
+8. Alert user when puzzle is complete
+	call after every swap
+	compare current permutation to ["0", "1", "2", "3", "4", "5", "6", "7", "8"]
+	alert if they match and reload the page
+	commit #5 (02a6278)	
+
+9. Composer autoloading
+	add namespaces and src to composer.json
+	php composer.phar dump-autoload to generate autoload.php
+	remove require statements in files other than index.php
+	add require "vendor/autoload.php" to index.php
+	commit #6 (ac943d1)
+
+10. Client-side file validation
+	check file size passed from form onchange in JS
+	check file mime type from form onchange in JS
+	commit #7 (7e731b9)
+
+11. Create Upload Logs
+	instal monolog
+	composer require monolog/monolog
+	use existing logic and monolog to log messages about uploads
+	commit #8 (3209e55)
+	
+12. Send Ajax Messages
+	use xmlhttprequest
+	POST to ./src/models/ajaxModel.php
+	send current permutation string
+	commit #8 (3209e55)
+
+13. Update active_image.txt
+	ajaxModel.php reads request body from php://input, _POST will be empty
+	wrtie new permuation to ../resources/active_image.txt
+	commit #8 (3209e55)
+
+14. Lock file when writing to them
+	check return of flock($permFile, LOCK_EX)
+	write then flush and release the lock
+	commit #8 (3209e55)
+
+15. Images don't update when new image is uploaded
+	prevent browser caching to fix this
+	commit #8 (3209e55)

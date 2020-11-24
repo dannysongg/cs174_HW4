@@ -38,6 +38,7 @@ function checkIfSolved(){
         setTimeout(function(){
             if(!alert("Jigsaw Solved! Congrats!")){
                 window.location.reload();
+                // window.location.replace("index.php?a=refresh");
             }
         }, 250)
     }
@@ -47,10 +48,7 @@ function checkIfSolved(){
 function updatePermFile(current){
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.open("POST", "./src/models/ajaxModel.php");
-    // xmlhttp.setRequestHeader("Content-Type", "application/json");
-    // xmlhttp.send(JSON.stringify({"currentPerm" : current}));
     xmlhttp.send(JSON.stringify(current))
-    // window.location.href = "index.php";
 }
 
 function validateFile(file) {
